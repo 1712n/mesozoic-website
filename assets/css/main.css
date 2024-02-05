@@ -673,6 +673,10 @@ input, select, textarea {
 			width: 100%;
 		}
 
+		.container.borderTop {
+			border-top: solid 5px rgba(255, 255, 255, 0.3);
+		}
+
 		@media screen and (max-width: 1280px) {
 
 			.container {
@@ -932,6 +936,12 @@ input, select, textarea {
 				.row.gtr-200.gtr-uniform > * {
 					padding-top: 5em;
 				}
+
+		.row.marginTopDown {
+			margin-top: 2em;
+			margin-bottom: 0em;
+		}
+
 
 		@media screen and (max-width: 1680px) {
 
@@ -2982,9 +2992,43 @@ input, select, textarea {
 		background-position: center center;
 		background-size: cover;
 		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
-		height: 100vh;
+		height: 70vh;
 		overflow: hidden;
 		position: relative;
+	}
+
+	.specialSpotlightTop {
+		background-attachment: fixed;
+		background-position: center center;
+		background-size: cover;
+		box-shadow: 0 0em 0em 0 rgba(0, 0, 0, 0.25);
+		height: 30vh;
+		overflow: hidden;
+		position: relative;
+			border-style: solid;
+			opacity: 1;
+			border-top-width: 0.35em;
+			border-color: #5f6373;
+			left: 0;
+			width: 100%;
+			padding: 2.5em 0 3.1em 0;
+	}
+
+	.specialSpotlightBottom {
+		background-attachment: fixed;
+		background-position: center center;
+		background-size: cover;
+		box-shadow: 0 0em 0em 0 rgba(0, 0, 0, 0.25);
+		height: 12vh;
+		overflow: hidden;
+		position: relative;
+			border-style: solid;
+			opacity: 1;
+			border-bottom-width: 0.35em;
+			border-color: #5f6373;
+			left: 0;
+			width: 100%;
+			padding: 1.5em 0 1.1em 0;
 	}
 
 		.spotlight:nth-last-of-type(1) {
@@ -3116,7 +3160,7 @@ input, select, textarea {
 			opacity: 1;
 		}
 
-		.spotlight.top .content, .spotlight.bottom .content {
+		.spotlight.top .content, .spotlight.bottom .content, .spotlight.topBottom .content, .spotlight.bottomBottom .content {
 			left: 0;
 			padding: 5.1em 0 3.1em 0;
 			width: 100%;
@@ -3130,6 +3174,22 @@ input, select, textarea {
 		.spotlight.bottom .content {
 			border-top-width: 0.35em;
 			bottom: 0;
+		}
+
+		.spotlight.bottomBottom .content {   /*The content of the section is placed at its bottom*/
+			bottom: 0;                       /*Affects when the section actually appears, i.e. when the section passes by the Bottom of the screen in that case.*/
+			border-top-width: 0.35em;
+			border-bottom-width: 0.35em;
+			border-top-color: #002654;
+			border-bottom-color: #FFFFFF;
+		}
+
+		.spotlight.topBottom .content {   /*The content of the section is placed at its top*/
+			top: 0;                       /*Affects when the section actually appears, i.e. when the section passes by the top of the screen in that case.*/
+			/*border-top-width: 0.35em;*/
+			border-bottom-width: 0.35em;
+			border-top-color: #FFFFFF;
+			border-bottom-color: #ED2939;
 		}
 
 		.spotlight.left .content, .spotlight.right .content {
